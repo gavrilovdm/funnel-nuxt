@@ -26,13 +26,11 @@
     </div>
     
     <div class="text-center mt-8">
-      <button 
+      <BaseButton 
         @click="navigateToNextScreen" 
-        class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-        :disabled="selectedOptions.length === 0"
-        :class="{ 'opacity-50 cursor-not-allowed': selectedOptions.length === 0 }">
+        :disabled="selectedOptions.length === 0">
         Continue
-      </button>
+      </BaseButton>
     </div>
   </div>
 </template>
@@ -41,6 +39,7 @@
 import { ref, computed } from 'vue';
 import { useRouter, useRoute } from '#app';
 import { useFunnelStore } from '../stores/funnel';
+import BaseButton from './BaseButton.vue';
 
 const props = defineProps({
   title: Object,
